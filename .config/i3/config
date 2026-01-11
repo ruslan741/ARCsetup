@@ -1,0 +1,23 @@
+include $HOME/.config/i3/workspaces.conf
+include $HOME/.config/i3/rules.conf
+
+set $mod Mod4
+font pango:JetBrainsMono Nerd Font 12
+
+# Color scheme matching tabbed/dwm setup
+# class                 border  backgr. text    indicator child_border
+client.focused          #FFD205 #090C19 #F9EEDF #4fc3f7   #FFD205
+client.focused_inactive #2E3241 #090C19 #F9EEDF #00141d   #2E3241
+client.unfocused        #2E3241 #090C19 #F9EEDF #00141d   #2E3241
+client.urgent           #4fc3f7 #090C19 #F9EEDF #4fc3f7   #4fc3f7
+client.placeholder      #2E3241 #090C19 #F9EEDF #00141d   #2E3241
+client.background       #2E3241
+
+# Add padding to window titles
+for_window [class=".*"] title_format "  %title"
+
+exec_always --no-startup-id ~/.config/i3/scripts/autostart.sh
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
