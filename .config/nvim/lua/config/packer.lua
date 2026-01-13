@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
 	use 'nvim-lua/plenary.nvim'
 	use {
 		'nvim-telescope/telescope.nvim',
-		tag = '0.1.8',
+		tag = '*',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use 'nvim-tree/nvim-web-devicons'
@@ -28,6 +28,8 @@ return require('packer').startup(function(use)
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
+
 	use 'norcalli/nvim-colorizer.lua'
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
-end)  
+	use 'mason-org/mason.nvim'
+end)

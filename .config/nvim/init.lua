@@ -1,20 +1,13 @@
 require('mycolors.mynvimscheme').setup()
-require("config.keybinds")
+require("config.myoptions")
 require("config.packer")
 require("plugins.telescope")
 require("plugins.blankline")
 require("plugins.lualine")
 require("plugins.colorizer")
 require("plugins.bufferline")
-vim.opt.clipboard = "unnamedplus"
-vim.cmd("set mouse")
-vim.cmd("set autoindent")
-vim.cmd("set smarttab")
-vim.cmd("set relativenumber")
-vim.cmd("set number")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+require("plugins.mason")
+require("plugins.nvim-tree")
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

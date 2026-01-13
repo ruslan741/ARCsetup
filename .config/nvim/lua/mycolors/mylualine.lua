@@ -1,7 +1,6 @@
 local colors_path = vim.fn.expand("~/config/colors")
 package.path = package.path .. ";" .. colors_path .. "/?.lua"
 
--- Загружаем цвета
 local colors = require("colors")
 
 local c = colors
