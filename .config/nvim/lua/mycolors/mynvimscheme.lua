@@ -23,31 +23,26 @@ function M.setup()
 	-- Таб активный (текущий)
 	vim.api.nvim_set_hl(0, "TabLineSel", {
 		fg = c.green,  -- цвет текста активного таба
-		bg = c.green,  -- фон активного таба
 	})
 
 	-- Таб неактивный
 	vim.api.nvim_set_hl(0, "TabLine", {
 		fg = c.green,  -- цвет текста неактивного таба
-		bg = c.green,  -- фон неактивного таба
 	})
 
 	-- Фон tabline (область справа от табов)
 	vim.api.nvim_set_hl(0, "TabLineFill", {
 		fg = c.green,  -- цвет текста (обычно не используется)
-		bg = c.green,  -- фон пустой области табов
 	})
 
 	-- Разделитель между табами
 	vim.api.nvim_set_hl(0, "TabLineSeparator", {
 		fg = c.green,  -- цвет разделителя
-		bg = c.green,  -- фон (должен совпадать с TabLineFill)
 	})
 
 	-- Разделитель активного таба
 	vim.api.nvim_set_hl(0, "TabLineSelSeparator", {
 		fg = c.green,  -- обычно совпадает с фоном активного таба
-		bg = c.green,  -- фон
 	})
 
 	-- Разделитель при наведении

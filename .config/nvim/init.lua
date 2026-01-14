@@ -1,6 +1,6 @@
 require('mycolors.mynvimscheme').setup()
+require("config.lazy")
 require("config.myoptions")
-require("config.packer")
 require("plugins.telescope")
 require("plugins.blankline")
 require("plugins.lualine")
@@ -8,6 +8,8 @@ require("plugins.colorizer")
 require("plugins.bufferline")
 require("plugins.mason")
 require("plugins.nvim-tree")
+require("plugins.lsp")
+require("plugins.completion")
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

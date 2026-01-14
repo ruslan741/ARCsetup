@@ -32,4 +32,9 @@ return require('packer').startup(function(use)
 	use 'norcalli/nvim-colorizer.lua'
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 	use 'mason-org/mason.nvim'
+	use 'pangloss/vim-javascript'
+	use 'mxw/vim-jsx'
+	use 'leafgarland/typescript-vim'
+	use 'peitalin/vim-jsx-typescript'
 end)
+
