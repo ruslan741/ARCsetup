@@ -16,72 +16,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		"nvim-lua/plenary.nvim",
-	},
-
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-
-	{
-		"nvim-tree/nvim-web-devicons",
-	},
-
-	{
-		"nvim-tree/nvim-tree.lua",
-		requires = {
-			"nvim-tree/nvim-web-devicons",
-		},
-	},
-
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = function()
-			require("nvim-autopairs").setup {}
-		end
-	},
-
-	{
-		"lukas-reineke/indent-blankline.nvim",
-	},
-
-	{
-		"nvim-lualine/lualine.nvim",
-		requires = { "nvim-tree/nvim-web-devicons", opt = true }
-	},
-
-	{
-		"norcalli/nvim-colorizer.lua",
-	},
-
-	{
-		"akinsho/bufferline.nvim",
-		requires = "nvim-tree/nvim-web-devicons",
-	},
-
-	{
-		"mason-org/mason.nvim",
-	},
-
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
-
-	{
-		'saghen/blink.cmp',
-			dependencies = { 'rafamadriz/friendly-snippets' },
-			version = '1.*',
-			opts = {
-				keymap = { preset = 'default' },
-				appearance = {
-					nerd_font_variant = 'mono'
-				},
-				signature = { enabled = true }
-			},
+	spec = {
+		{ import = "plugins" },
 	},
 	checker = { enabled = true },
 })
