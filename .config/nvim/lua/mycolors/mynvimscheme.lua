@@ -106,6 +106,83 @@ function M.setup()
 	vim.api.nvim_set_hl(0, "Identifier", { fg = c.fg })
 	vim.api.nvim_set_hl(0, "Constant", { fg = c.yellow })
 
+	vim.api.nvim_set_hl(0, "javaScriptFunction", { fg = c.blue_br })
+	vim.api.nvim_set_hl(0, "javaScriptIdentifier", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptMember", { fg = c.fg })
+	vim.api.nvim_set_hl(0, "javaScriptNumber", { fg = c.purple_br })
+	vim.api.nvim_set_hl(0, "javaScriptNull", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptBraces", { fg = c.fg })
+	vim.api.nvim_set_hl(0, "javaScriptParens", { fg = c.fg })
+	vim.api.nvim_set_hl(0, "javaScriptOperator", { fg = c.fg })
+	vim.api.nvim_set_hl(0, "javaScriptType", { fg = c.yellow_br })
+	vim.api.nvim_set_hl(0, "javaScriptStatement", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptConditional", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptRepeat", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptLabel", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptException", { fg = c.purple })
+	vim.api.nvim_set_hl(0, "javaScriptGlobal", { fg = c.yellow })
+	vim.api.nvim_set_hl(0, "javaScriptMessage", { fg = c.blue_br })
+	vim.api.nvim_set_hl(0, "javaScriptBracket", { fg = c.fg })
+
+
+	-- Для JSX
+	vim.api.nvim_set_hl(0, "jsxTag", { fg = c.blue_br }) -- JSX теги
+	vim.api.nvim_set_hl(0, "jsxTagName", { fg = c.blue_br }) -- Имена тегов
+	vim.api.nvim_set_hl(0, "jsxComponentName", { fg = c.yellow_br }) -- Компоненты React
+	vim.api.nvim_set_hl(0, "jsxCloseString", { fg = c.blue_br }) -- />
+	vim.api.nvim_set_hl(0, "jsxAttrib", { fg = c.yellow }) -- Атрибуты JSX
+	vim.api.nvim_set_hl(0, "jsxString", { fg = c.green_br }) -- Строки в JSX
+	vim.api.nvim_set_hl(0, "jsxEqual", { fg = c.fg }) -- = в атрибутах
+	vim.api.nvim_set_hl(0, "jsxDot", { fg = c.fg }) -- Точки в className
+	vim.api.nvim_set_hl(0, "jsxBraces", { fg = c.fg }) -- {} в JSX
+	vim.api.nvim_set_hl(0, "jsxPunct", { fg = c.blue_br }) -- Знаки пунктуации
+	vim.api.nvim_set_hl(0, "jsxCloseTag", { fg = c.blue_br }) -- Закрывающие теги
+	vim.api.nvim_set_hl(0, "jsxCloseTagName", { fg = c.blue_br }) -- Имена закрывающих тегов
+	vim.api.nvim_set_hl(0, "jsxExpressionBlock", { fg = c.fg })
+
+	-- Для CSS
+	vim.api.nvim_set_hl(0, "cssTagName", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssClassName", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssIdentifier", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssProp", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssDefinition", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssAttr", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssAttrRegion", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssColor", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssValueNumber", { fg = c.green })
+	vim.api.nvim_set_hl(0, "cssUnitDecorators", { fg = c.green })
+
+
+	-- HTML стандартная разметка (базовая подсветка Vim)
+	vim.api.nvim_set_hl(0, "htmlTag", { fg = c.blue_br }) -- < >
+	vim.api.nvim_set_hl(0, "htmlEndTag", { fg = c.blue_br }) -- </ >
+	vim.api.nvim_set_hl(0, "htmlTagName", { fg = c.blue_br }) -- div, span, a и т.д.
+	vim.api.nvim_set_hl(0, "htmlSpecialTagName", { fg = c.blue_br }) -- !DOCTYPE, script, style
+	vim.api.nvim_set_hl(0, "htmlArg", { fg = c.yellow }) -- Атрибуты: class, id, href
+	vim.api.nvim_set_hl(0, "htmlString", { fg = c.green_br }) -- Значения атрибутов в кавычках
+	vim.api.nvim_set_hl(0, "htmlValue", { fg = c.green_br }) -- Значения атрибутов
+	vim.api.nvim_set_hl(0, "htmlSpecialChar", { fg = c.orange }) -- &nbsp; &lt; и т.д.
+	vim.api.nvim_set_hl(0, "htmlComment", { fg = c.comment }) -- <!-- комментарии -->
+	vim.api.nvim_set_hl(0, "htmlCommentPart", { fg = c.comment }) -- Внутри комментариев
+	vim.api.nvim_set_hl(0, "htmlLink", { fg = c.blue }) -- Ссылки
+	vim.api.nvim_set_hl(0, "htmlH1", { fg = c.purple, bold = true }) -- Заголовки
+	vim.api.nvim_set_hl(0, "htmlH2", { fg = c.purple, bold = true })
+	vim.api.nvim_set_hl(0, "htmlH3", { fg = c.purple, bold = true })
+	vim.api.nvim_set_hl(0, "htmlH4", { fg = c.purple, bold = true })
+	vim.api.nvim_set_hl(0, "htmlH5", { fg = c.purple, bold = true })
+	vim.api.nvim_set_hl(0, "htmlH6", { fg = c.purple, bold = true })
+	vim.api.nvim_set_hl(0, "htmlBold", { fg = c.fg, bold = true }) -- <b>, <strong>
+	vim.api.nvim_set_hl(0, "htmlItalic", { fg = c.fg, italic = true }) -- <i>, <em>
+	vim.api.nvim_set_hl(0, "htmlUnderline", { fg = c.fg, underline = true }) -- <u>
+	vim.api.nvim_set_hl(0, "htmlBoldItalic", { fg = c.fg, bold = true, italic = true })
+	vim.api.nvim_set_hl(0, "htmlBoldUnderline", { fg = c.fg, bold = true, underline = true })
+	vim.api.nvim_set_hl(0, "htmlBoldItalicUnderline", { fg = c.fg, bold = true, italic = true, underline = true })
+
+	-- Общие улучшения
+	vim.api.nvim_set_hl(0, "Comment", { fg = c.gray_30 }) -- Комментарии
+	vim.api.nvim_set_hl(0, "Operator", { fg = c.green }) -- Операторы (+, -, =)
+	vim.api.nvim_set_hl(0, "Special", { fg = c.green }) -- Специальные символы
+	vim.api.nvim_set_hl(0, "PreProc", { fg = c.green }) -- Препроцессорные директивы
 
 	-- Настройка цветов для разных режимов
 	M.setup_mode_colors()

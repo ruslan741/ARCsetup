@@ -80,7 +80,7 @@ return {
 					-- Jump to the definition of the word under your cursor.
 					--  This is where a variable was first declared, or where a function is defined, etc.
 					--  To jump back, press <C-t>.
-					map('gd', function() Snacks.picker.lsp_definitions() end, '[G]oto [D]efinition')
+					map('<leader>gn', function() Snacks.picker.lsp_definitions() end, '[G]oto [D]efinition')
 
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
 					--  For example, in C this would take you to the header.
@@ -227,6 +227,12 @@ return {
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
 							-- diagnostics = { disable = { 'missing-fields' } },
+						},
+						html = {},  -- HTML
+						cssls = {},  -- CSS
+						tsserver = {  -- JS/JSX/TS/TSX
+							filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
+							init_options = { hostInfo = 'neovim' },
 						},
 					},
 				},

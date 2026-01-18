@@ -6,10 +6,10 @@ font pango:JetBrainsMono Nerd Font 12
 
 # Color scheme matching tabbed/dwm setup
 # class                 border  backgr. text    indicator child_border
-client.focused          #FFD205 #090C19 #F9EEDF #4fc3f7   #FFD205
+client.focused          #1FFF76 #090C19 #F9EEDF #1FFF76   #1FFF76
 client.focused_inactive #2E3241 #090C19 #F9EEDF #00141d   #2E3241
 client.unfocused        #2E3241 #090C19 #F9EEDF #00141d   #2E3241
-client.urgent           #4fc3f7 #090C19 #F9EEDF #4fc3f7   #4fc3f7
+client.urgent           #1FFF76 #090C19 #F9EEDF #1FFF76   #1FFF76
 client.placeholder      #2E3241 #090C19 #F9EEDF #00141d   #2E3241
 client.background       #2E3241
 
@@ -17,6 +17,8 @@ client.background       #2E3241
 for_window [class=".*"] title_format "  %title"
 
 exec_always --no-startup-id ~/.config/i3/scripts/autostart.sh
+
+exec --no-startup-id python ~/xborder/main.py --radius 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

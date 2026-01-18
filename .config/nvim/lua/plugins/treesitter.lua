@@ -8,12 +8,33 @@ return {
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     opts = {
         ensure_installed = {
-			"bash", "c", "diff", "html", "lua", "luadoc", "markdown", "markdown_inline", "query", "vim", "vimdoc", "rust", 'regex', "php", "blade", "css"
+			"bash",
+			"c",
+			"diff",
+			"html",
+			"lua",
+			"luadoc",
+			"markdown",
+			"markdown_inline",
+			"query",
+			"vim",
+			"vimdoc",
+			"rust",
+			'regex',
+			"php",
+			"blade",
+			"css",
+			"javascript",
+			"typescript",
+			"tsx",
+			"jsx",
+
         },
         auto_install = true,
         highlight = {
             enable = true,
-            additional_vim_regex_highlighting = { "ruby" },
+			disable = { "javascript", "html", "jsx", "tsx" },
+			additional_vim_regex_highlighting = true,
         },
         indent = { enable = true, disable = { "ruby" } },
         incremental_selection = {

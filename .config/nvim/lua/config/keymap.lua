@@ -15,3 +15,9 @@ vim.keymap.set('n', '<C-n>', function()
   local tree = require("nvim-tree.api").tree
   tree.toggle({ focus = false })
 end, { desc = "Toggle NvimTree" })
+
+--bufferline
+vim.keymap.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { noremap = true, silent = true })
