@@ -1,3 +1,6 @@
+super + ctrl + w
+	~/.config/i3/scripts/wallpapermenu
+
 # Launch Browser (Firefox)
 super + b
 	yandex-browser 
