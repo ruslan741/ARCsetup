@@ -28,13 +28,11 @@ return {
 			"typescript",
 			"tsx",
 			"jsx",
-
         },
         auto_install = true,
         highlight = {
             enable = true,
-			disable = { "javascript", "html", "jsx", "tsx" },
-			additional_vim_regex_highlighting = true,
+			additional_vim_regex_highlighting = false,
         },
         indent = { enable = true, disable = { "ruby" } },
         incremental_selection = {

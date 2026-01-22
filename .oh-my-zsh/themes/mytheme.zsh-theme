@@ -15,42 +15,42 @@ function afmagic_dashes {
 }
 
 # primary prompt: dashed separator, directory and vcs info
-PS1="%F{#4B505C}\${(l.\$(afmagic_dashes)..-.)}%{$reset_color%}
-%F{#5FFFFF}%~\$(git_prompt_info)\$(hg_prompt_info) %F{#1FFF76}%(!.#.»)%{$reset_color%} "
-PS2="%F{#4B505C}%{$reset_color%}"
+#PS1="\${(l.\$(afmagic_dashes)..-.)}%{$reset_color%}
+PS1="%~\$(git_prompt_info)\$(hg_prompt_info) %(!.#.»)%{$reset_color%} "
+#PS2="%{$reset_color%}"
 
 # right prompt: return code, virtualenv and context (user@host)
-RPS1="%(?..%F{#4B505C}? ↵%{$reset_color%})"
+RPS1="%(?..? ↵%{$reset_color%})"
 if (( $+functions[virtualenv_prompt_info] )); then
   RPS1+='$(virtualenv_prompt_info)'
 fi
-RPS1+="%F{#4B505C}%n@%m%{$reset_color%}"
+RPS1+="%n@%m%{$reset_color%}"
 
 # git settings
-ZSH_THEME_GIT_PROMPT_PREFIX="%F{#FFD205}(%F{#1FFF76}"
+ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{#FFD205}*%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%F{#FFD205})%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="*%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
 
 # hg settings
-ZSH_THEME_HG_PROMPT_PREFIX=" %F{#4B505C}(%F{#1FFF76}"
+ZSH_THEME_HG_PROMPT_PREFIX=" (%F{#1FFF76}"
 ZSH_THEME_HG_PROMPT_CLEAN=""
-ZSH_THEME_HG_PROMPT_DIRTY="%F{#FF3CBF}*%{$reset_color%}"
-ZSH_THEME_HG_PROMPT_SUFFIX="%F{#4B505C})%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY="*%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_SUFFIX=")%{$reset_color%}"
 
 # virtualenv settings
-ZSH_THEME_VIRTUALENV_PREFIX=" %F{#4B505C}["
+ZSH_THEME_VIRTUALENV_PREFIX=" ["
 ZSH_THEME_VIRTUALENV_SUFFIX="]%{$reset_color%}"
 
 # Основные цвета (перед загрузкой плагина)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 
 # Настройка цветов для разных типов токенов
-ZSH_HIGHLIGHT_STYLES[command]='fg=#FFD205,bold'           # существующая команда
-ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#F60010,bold'       # неизвестная команда
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=#1FFF76'               # встроенные команды
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#1FFF76'                   # алиасы
-ZSH_HIGHLIGHT_STYLES[path]='underline'                  # пути
-ZSH_HIGHLIGHT_STYLES[precommand]='fg=#FF3CBF'              # команды перед путями (sudo, time и т.д.)
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#A4A5AA' # опции с одной чертой (-l)
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#A4A5AA' # опции с двумя чертами (--help)
+#ZSH_HIGHLIGHT_STYLES[command]='fg=#FFD205,bold'           # существующая команда
+#ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#F60010,bold'       # неизвестная команда
+#ZSH_HIGHLIGHT_STYLES[builtin]='fg=#1FFF76'               # встроенные команды
+#ZSH_HIGHLIGHT_STYLES[alias]='fg=#1FFF76'                   # алиасы
+#ZSH_HIGHLIGHT_STYLES[path]='underline'                  # пути
+#ZSH_HIGHLIGHT_STYLES[precommand]='fg=#FF3CBF'              # команды перед путями (sudo, time и т.д.)
+#ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=#A4A5AA' # опции с одной чертой (-l)
+#ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=#A4A5AA' # опции с двумя чертами (--help)

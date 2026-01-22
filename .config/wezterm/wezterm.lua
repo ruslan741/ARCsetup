@@ -6,7 +6,7 @@ local act = wezterm.action
 
 local home_dir = wezterm.home_dir or os.getenv("HOME")
 
-local colors_path = home_dir .. "/config/colors/colors.lua"
+local colors_path = home_dir .. "/.config/config/colors/colors.lua"
 
 local colors = dofile(colors_path)  
 
@@ -79,12 +79,12 @@ config.colors = {
 
 config.keys = {
 	{
-		key = 'v',
+		key = 'h',
 		mods = 'SUPER|SHIFT',
 		action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
 	},
 	{
-		key = 'h',
+		key = 'v',
 		mods = 'SUPER|SHIFT',
 		action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
 	},

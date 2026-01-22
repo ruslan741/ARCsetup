@@ -1,4 +1,4 @@
-local colors_path = vim.fn.expand("~/config/colors")
+local colors_path = vim.fn.expand("~/.config/config/colors")
 package.path = package.path .. ";" .. colors_path .. "/?.lua"
 
 local colors = require("colors")
