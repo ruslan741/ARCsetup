@@ -1,4 +1,4 @@
-require('mycolors.mynvimscheme').setup()
+--require('mycolors.mynvimscheme').setup()
 require("config.lazy")
 require("config.keymap")
 require("config.myoptions")
