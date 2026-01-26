@@ -1,6 +1,7 @@
 return {
-	'AlphaTechnolog/pywal.nvim',
+	'ruslan741/pywal.nvim',
 	config = function()
-		require('pywal').setup()
+		require('pywal').setup({
+		})
 	end,
 }

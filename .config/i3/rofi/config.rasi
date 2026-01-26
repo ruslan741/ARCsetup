@@ -1,123 +1,129 @@
-  * {
-        bg: #090C19;
-        background-color: @bg;
-    }
+/* Dark theme. */
+// @import "~/.cache/wal/colors-rofi-dark"
 
-    configuration {
-	    show-icons: true;
-	    icon-theme: "Papirus";
-	    location: 0;
-	    font: "JetBrainsMono Nerd Font 12";	
-	    display-drun: "Launch:";
-    }
+/* Light theme. */
+@import "~/.cache/wal/colors-rofi-light"
 
-    window { 
-	    width: 45%;
-	    transparency: "real";
-	    orientation: vertical;
-	    border-color: #DBC704;
-        border-radius: 8px;
-    }
+* {
+bg: #090C19;
+	background-color: @bg;
+}
 
-    mainbox {
-	    children: [inputbar, listview];
-    }
+configuration {
+	show-icons: true;
+	icon-theme: "Papirus";
+location: 0;
+font: "JetBrainsMono Nerd Font 12";	
+	  display-drun: "Launch:";
+}
+
+window { 
+width: 45%;
+transparency: "real";
+orientation: vertical;
+			 border-color: #DBC704;
+			 border-radius: 8px;
+}
+
+mainbox {
+children: [inputbar, listview];
+}
 
 
-    // ELEMENT
-    // -----------------------------------
+// ELEMENT
+// -----------------------------------
 
-    element {
-	    padding: 4 12;
-	    text-color: #161616;
-        border-radius: 5px;
-    }
+element {
+padding: 4 12;
+		 text-color: #161616;
+		 border-radius: 5px;
+}
 
-    element selected {
-	    text-color: #ffffff;
-	    background-color: #DBC704;
-    }
+element selected {
+	text-color: #ffffff;
+	background-color: #DBC704;
+}
 
-    element-text {
-	    background-color: inherit;
-	    text-color: inherit;
-    }
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
 
-    element-icon {
-	    size: 16 px;
-	    background-color: inherit;
-	    padding: 0 6 0 0;
-	    alignment: vertical;
-    }
+element-icon {
+size: 16 px;
+	  background-color: inherit;
+padding: 0 6 0 0;
+alignment: vertical;
+}
 
-	element.selected.active {
-		background-color: #161616;
-		text-color: #F2F4F8;
-	}
- 
-	element.alternate.normal {
-		background-color: #161616;
-		text-color: #F2F4F8;
-	}
+element.selected.active {
+	background-color: #161616;
+	text-color: #F2F4F8;
+}
 
- 
-	element.alternate.active {
-		background-color: #ff8f40;
-		text-color: #F2F4F8;
-	}
+element.alternate.normal {
+	background-color: #161616;
+	text-color: #F2F4F8;
+}
 
-	element.selected.normal {
-		background-color: #ff8f40;
-		text-color: #161616;
-	}
- 
 
-	element.normal.active {
-		background-color: #161616;
-		text-color: #F2F4F8;
-	}
- 
+element.alternate.active {
+	background-color: #ff8f40;
+	text-color: #F2F4F8;
+}
 
-	element.normal.normal {
-		background-color: #161616;
-		text-color: #F2F4F8;
-	}
- 
-	element.normal.urgent {
-		background-color: #f25d78;
-		text-color: #161616;
-	}
+element.selected.normal {
+	background-color: #ff8f40;
+	text-color: #161616;
+}
 
-	
 
-    listview {
-	    columns: 2;
-	    lines: 9;
-	    padding: 8 0;
-	    fixed-height: true;
-	    fixed-columns: true;
-	    fixed-lines: true;
-	    border: 0 10 6 10;
-    }
+element.normal.active {
+	background-color: #161616;
+	text-color: #F2F4F8;
+}
 
-    // INPUT BAR 
-    //------------------------------------------------
 
-    entry {
-	    text-color: #f27893;
-	    padding: 10 10 0 0;
-	    margin: 0 -2 0 0;
-    }
+element.normal.normal {
+	background-color: #161616;
+	text-color: #F2F4F8;
+}
 
-    inputbar {
-	    padding: 10 0 0;
-	    margin: 0 0 0 0;
-    } 
+element.normal.urgent {
+	background-color: #f25d78;
+	text-color: #161616;
+}
 
-    prompt {
-	    text-color: #78a9ff;
-	    padding: 10 6 0 10;
-	    margin: 0 -2 0 0;
-    }
+
+
+listview {
+columns: 2;
+lines: 9;
+padding: 8 0;
+		 fixed-height: true;
+		 fixed-columns: true;
+		 fixed-lines: true;
+border: 0 10 6 10;
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+	text-color: #f27893;
+padding: 10 10 0 0;
+margin: 0 -2 0 0;
+}
+
+inputbar {
+padding: 10 0 0;
+margin: 0 0 0 0;
+} 
+
+prompt {
+	text-color: #78a9ff;
+padding: 10 6 0 10;
+margin: 0 -2 0 0;
+}
 
 
