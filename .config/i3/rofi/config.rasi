@@ -1,13 +1,4 @@
-/* Dark theme. */
-// @import "~/.cache/wal/colors-rofi-dark"
-
-/* Light theme. */
-@import "~/.cache/wal/colors-rofi-light"
-
-* {
-bg: #090C19;
-	background-color: @bg;
-}
+@import "~/.cache/wal/colors-rofi-dark.rasi"
 
 configuration {
 	show-icons: true;
@@ -19,10 +10,12 @@ font: "JetBrainsMono Nerd Font 12";
 
 window { 
 width: 45%;
+padding: 8;
 transparency: "real";
 orientation: vertical;
-			 border-color: #DBC704;
-			 border-radius: 8px;
+border-color: @color10;
+border-radius: 0px;
+border: 1px;
 }
 
 mainbox {
@@ -34,14 +27,14 @@ children: [inputbar, listview];
 // -----------------------------------
 
 element {
-padding: 4 12;
-		 text-color: #161616;
-		 border-radius: 5px;
+padding: 8 12;
+text-color: @foreground;
+border-radius: 0px;
 }
 
 element selected {
-	text-color: #ffffff;
-	background-color: #DBC704;
+	text-color: @selected-active-foreground;
+	background-color: @selected-active-background;
 }
 
 element-text {
@@ -50,42 +43,42 @@ element-text {
 }
 
 element-icon {
-size: 16 px;
-	  background-color: inherit;
-padding: 0 6 0 0;
-alignment: vertical;
+	size: 20 px;
+	background-color: inherit;
+	padding: 0 6 0 0;
+	alignment: vertical;
 }
 
 element.selected.active {
-	background-color: #161616;
+	background-color: @color10;
 	text-color: #F2F4F8;
 }
 
 element.alternate.normal {
-	background-color: #161616;
+	background-color: @color10;
 	text-color: #F2F4F8;
 }
 
 
 element.alternate.active {
-	background-color: #ff8f40;
+	background-color: @color10;
 	text-color: #F2F4F8;
 }
 
 element.selected.normal {
-	background-color: #ff8f40;
+	background-color: @color3;
 	text-color: #161616;
 }
 
 
 element.normal.active {
-	background-color: #161616;
+	background-color: @color10;
 	text-color: #F2F4F8;
 }
 
 
 element.normal.normal {
-	background-color: #161616;
+	background-color: @color10;
 	text-color: #F2F4F8;
 }
 
@@ -98,11 +91,11 @@ element.normal.urgent {
 
 listview {
 columns: 2;
-lines: 9;
-padding: 8 0;
-		 fixed-height: true;
-		 fixed-columns: true;
-		 fixed-lines: true;
+lines: 8;
+padding: 0;
+fixed-height: true;
+fixed-columns: true;
+fixed-lines: true;
 border: 0 10 6 10;
 }
 
@@ -111,8 +104,8 @@ border: 0 10 6 10;
 
 entry {
 	text-color: #f27893;
-padding: 10 10 0 0;
-margin: 0 -2 0 0;
+	padding: 10 10 0 0;
+	margin: 0 -2 0 0;
 }
 
 inputbar {

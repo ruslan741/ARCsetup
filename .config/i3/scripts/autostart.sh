@@ -14,6 +14,7 @@ picom --config ~/.config/i3/picom/picom.conf --animations -b &
 
 # sxhkd
 pkill -x sxhkd
-sxhkd -c ~/.config/i3/sxhkd/sxhkdrc &
 
+sxhkd -c ~/.config/i3/sxhkd/sxhkdrc &
+pywalfox daemon &
 wal -R

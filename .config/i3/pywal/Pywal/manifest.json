@@ -1,0 +1,24 @@
+	{
+	  "manifest_version": 3,
+	  "version": "1.0",
+	  "name": "Pywal Theme",
+	  "theme": {
+		"colors": {
+		  "theme_ntp_background": [9, 3, 3],
+		  "frame": [9, 3, 3],
+		  "frame_inactive": [9, 3, 3],
+		  "toolbar": [206, 111, 111],
+		  "ntp_text": [9, 3, 3],
+		  "ntp_link": [206, 111, 111],
+		  "ntp_section": [111, 73, 73],
+		  "button_background": [193, 192, 192],
+		  "toolbar_button_icon": [193, 192, 192],
+		  "toolbar_text": [9, 3, 3],
+		  "omnibox_background": [9, 3, 3],
+		  "omnibox_text": [9, 3, 3]
+	  },
+		"properties": {
+		  "ntp_background_alignment": "bottom"
+	  }
+}
+}

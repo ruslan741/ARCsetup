@@ -3,7 +3,7 @@
 # slightly scuffed wallpaper picker menu for use with pywal - uses nsxiv if installed, otherwise uses dmenu
 
 FOLDER=~/.config/i3/wallpaper # wallpaper folder
-#SCRIPT=~/.config/i3/pywal/pywal # script to run after wal for refreshing programs, etc.
+SCRIPT=~/.config/i3/pywal/generate-theme.sh # script to run after wal for refreshing programs, etc.
 
 
 menu () {
@@ -14,7 +14,7 @@ menu () {
 	fi
 
 	case $CHOICE in
-		*.*) wal --cols16 lighten --saturate 0.1 --contrast 21.0 -i "$CHOICE" ;; #-o $SCRIPT ;;
+		*.*) wal --cols16 lighten --saturate 0.1 --contrast 21.0 -i "$CHOICE" -o $SCRIPT ;;
 		*) exit 0 ;;
 	esac
 }

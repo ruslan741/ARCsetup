@@ -1,6 +1,6 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
 * {
-    bg: #161616;
-    background-color: @bg;
     font: "JetBrainsMono Nerd Font 12";  /* Monospace font for alignment */
 }
 
@@ -29,7 +29,7 @@ mainbox {
 element {
     padding: 4 8;
     text-color: #F2F4F8;
-    background-color: #161616;
+    background-color: @normal-background;
     border-radius: 5px;
 }
 
@@ -51,12 +51,12 @@ element-icon {
 }
 
 element.selected.active {
-    background-color: #161616;
+    background-color: @normal-background;
     text-color: #F2F4F8;
 }
 
 element.alternate.normal {
-    background-color: #161616;
+    background-color: @normal-background;
     text-color: #F2F4F8;
 }
 
@@ -67,22 +67,22 @@ element.alternate.active {
 
 element.selected.normal {
     background-color: #ff8f40;
-    text-color: #161616;
+    text-color: @normal-background;
 }
 
 element.normal.active {
-    background-color: #161616;
+    background-color: @normal-background;
     text-color: #F2F4F8;
 }
 
 element.normal.normal {
-    background-color: #161616;
+    background-color: @normal-background;
     text-color: #F2F4F8;
 }
 
 element.normal.urgent {
     background-color: #f25d78;
-    text-color: #161616;
+    text-color: @normal-background;
 }
 
 listview {
