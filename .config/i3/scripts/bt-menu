@@ -1,0 +1,38 @@
+#!/bin/bash
+
+ROFI_THEME="$HOME/.config/i3/rofi/bt-menu.rasi"
+
+# Получаем список устройств и предлагаем подключиться/отключиться
+devices=$(bluetoothctl devices | awk '{$1=""; $2=""; print $0}' | sed 's/^  //')
+
+if [ -z "$devices" ]; then
+    echo "Нет сохраненных устройств" | rofi -dmenu -p "Bluetooth"
+    exit 0
+fi
+
+# Показываем меню
+selected=$(echo -e "Включить Bluetooth\nВыключить Bluetooth\n---\n$devices" | rofi -dmenu -p "Bluetooth" -hide-scrollbar -theme "$ROFI_THEME")
+
+case $selected in
+    "Включить Bluetooth") bluetoothctl power on ;;
+    "Выключить Bluetooth") bluetoothctl power off ;;
+    *)
+        if [ -n "$selected" ] && [ "$selected" != "---" ]; then
+            # Получаем MAC адрес
+            device_name=$(echo "$selected" | cut -d'(' -f1 | xargs)
+            mac=$(bluetoothctl devices | grep "$device_name" | awk '{print $2}')
+            
+            if [ -n "$mac" ]; then
+                # Проверяем подключено ли устройство
+                connected=$(bluetoothctl info "$mac" | grep "Connected: yes")
+                if [ -n "$connected" ]; then
+                    bluetoothctl disconnect "$mac"
+                    notify-send "Bluetooth" "Отключено: $device_name"
+                else
+                    bluetoothctl connect "$mac"
+                    notify-send "Bluetooth" "Подключаюсь к: $device_name"
+                fi
+            fi
+        fi
+        ;;
+esac

@@ -14,7 +14,7 @@ menu () {
 	fi
 
 	case $CHOICE in
-		*.*) wal --cols16 lighten --saturate 0.1 --contrast 21.0 -i "$CHOICE" -o $SCRIPT ;;
+		*.*) wal --cols16 lighten --saturate 0.25 --contrast 21.0 -i "$CHOICE" -o $SCRIPT ;;
 		*) exit 0 ;;
 	esac
 }
