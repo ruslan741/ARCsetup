@@ -2,7 +2,12 @@
 super + ctrl + b
 	~/.config/i3/scripts/bt-menu
 
+# только задний фон
+super + ctrl + shift + w
+	~/.config/i3/scripts/onlybgmenu
 
+
+# обои
 super + ctrl + w
 	~/.config/i3/scripts/wallpapermenu
 

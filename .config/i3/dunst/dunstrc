@@ -1,11 +1,11 @@
 [global]
     # Display
-    monitor = 0
+    monitor = 1
     follow = keyboard
     origin = top-right
-    offset = 15x48
-    width = 500
-    height = 300
+	offset = (24, 56)
+    width = 501
+    height = (0, 300)
     indicate_hidden = yes
     shrink = no
     transparency = 0
@@ -13,8 +13,8 @@
     padding = 15
     horizontal_padding = 15
     frame_width = 3
-    frame_color = "#090C19"
-	background = "#090C19"
+    frame_color = "#23417d"
+	background = "#02020b"
     separator_color = auto
     sort = yes
     idle_threshold = 120
@@ -46,12 +46,12 @@
     history_length = 20
 
     # Advanced
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu= /usr/bin/dmenu -p dunst:
     browser = /usr/bin/firefox -new-tab
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 15
+    corner_radius = 0
     force_xinerama = false
 
     # Progress bar
@@ -79,22 +79,22 @@
     per_monitor_dpi = false
 
 [urgency_low]
-    background = "#090C19"
-    foreground = "#1FFF76"
-    frame_color = "#539bf5"
+    background = "#02020b"
+    foreground = "#3f5fae"
+    frame_color = "#23417d"
     timeout = 10
-    highlight = "#539bf5"
+    highlight = "#3f5fae"
 
 [urgency_normal]
-    background = "#090C19"
-    foreground = "#FFD205"
-    frame_color = "#b3e5fc"
+    background = "#02020b"
+    foreground = "#3f5fae"
+    frame_color = "#23417d"
     timeout = 10
-    highlight = "#66d9ff"
+    highlight = "#3f5fae"
 
 [urgency_critical]
-    background = "#090C19"
-    foreground = "#F60010"
-    frame_color = "#d29922"
+    background = "#02020b"
+    foreground = "#3f5fae"
+    frame_color = "#23417d"
     timeout = 30
-    highlight = "#d29922"
+    highlight = "#3f5fae"

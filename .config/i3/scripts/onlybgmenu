@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# slightly scuffed wallpaper picker menu for use with pywal - uses nsxiv if installed, otherwise uses dmenu
+
+FOLDER=~/.config/i3/wallpaper # wallpaper folder
+SCRIPT=~/.config/i3/pywal/pywalonlybg # script to run after wal for refreshing programs, etc.
+
+
+menu () {
+	if command -v nsxiv >/dev/null; then 
+		CHOICE=$(nsxiv -otb $FOLDER/*)
+#	else 
+#		notify-send 'ну ты и гей'
+	fi
+
+	case $CHOICE in
+		*.*) wal --cols16 lighten --saturate 0.25 --contrast 21.0 -i "$CHOICE" -o $SCRIPT ;;
+		*) exit 0 ;;
+	esac
+}
+
+# If given arguments:
+# First argument will be used by pywal as wallpaper/dir path
+# Second will be used as theme (use wal --theme to view built-in themes)
+
+case "$#" in
+	0) menu ;;
+	1) wal -i "$1" -o $SCRIPT ;;
+	2) wal -i "$1" --theme $2 -o $SCRIPT ;;
+	*) exit 0 ;;
+esac

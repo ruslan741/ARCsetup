@@ -3,23 +3,23 @@
 configuration {
 	show-icons: true;
 	icon-theme: "Papirus";
-location: 0;
-font: "JetBrainsMono Nerd Font 12";	
-	  display-drun: "Launch:";
+	location: 0;
+	font: "JetBrainsMono Nerd Font 12";	
+	display-drun: "Launch";
 }
 
 window { 
-width: 45%;
-padding: 8;
-transparency: "real";
-orientation: vertical;
-border-color: @color10;
-border-radius: 0px;
-border: 1px;
+	width: 45%;
+	padding: 8;
+	transparency: "real";
+	orientation: vertical;
+	border-color: @color10;
+	border-radius: 0px;
+	border: 1px solid;
 }
 
 mainbox {
-children: [inputbar, listview];
+	children: [inputbar, listview];
 }
 
 
@@ -27,9 +27,9 @@ children: [inputbar, listview];
 // -----------------------------------
 
 element {
-padding: 8 12;
-text-color: @foreground;
-border-radius: 0px;
+	padding: 8 12;
+	text-color: @foreground;
+	border-radius: 0px;
 }
 
 element selected {
@@ -90,13 +90,13 @@ element.normal.urgent {
 
 
 listview {
-columns: 2;
-lines: 8;
-padding: 0;
-fixed-height: true;
-fixed-columns: true;
-fixed-lines: true;
-border: 0 10 6 10;
+	columns: 1;
+	lines: 8;
+	padding: 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: true;
+	border: 1px;
 }
 
 // INPUT BAR 
@@ -104,19 +104,19 @@ border: 0 10 6 10;
 
 entry {
 	text-color: #f27893;
-	padding: 10 10 0 0;
-	margin: 0 -2 0 0;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
 inputbar {
-padding: 10 0 0;
-margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 } 
 
 prompt {
 	text-color: #78a9ff;
-padding: 10 6 0 10;
-margin: 0 -2 0 0;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
 }
 
 
