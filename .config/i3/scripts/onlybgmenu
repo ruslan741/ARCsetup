@@ -1,31 +1,66 @@
 #!/usr/bin/env bash
 
-# slightly scuffed wallpaper picker menu for use with pywal - uses nsxiv if installed, otherwise uses dmenu
+# wallpaper picker menu for use with pywal - uses nsxiv if installed
 
-FOLDER=~/.config/i3/wallpaper # wallpaper folder
-SCRIPT=~/.config/i3/pywal/pywalonlybg # script to run after wal for refreshing programs, etc.
-
+FOLDER=~/.config/i3/wallpaper
+SCRIPT=~/.config/i3/pywal/pywalonlybg
+CONFIG_DIR="$HOME/.config/wal"
+PARAMS_FILE="$CONFIG_DIR/last_params"
 
 menu () {
-	if command -v nsxiv >/dev/null; then 
-		CHOICE=$(nsxiv -otb $FOLDER/*)
-#	else 
-#		notify-send 'ну ты и гей'
-	fi
+    if command -v nsxiv >/dev/null; then 
+        CHOICE=$(nsxiv -otb $FOLDER/*)
+    fi
 
-	case $CHOICE in
-		*.*) wal --cols16 lighten --saturate 0.25 --contrast 21.0 -i "$CHOICE" -o $SCRIPT ;;
-		*) exit 0 ;;
-	esac
+    case $CHOICE in
+        *.*) 
+            # Сохраняем параметры перед применением
+            mkdir -p "$CONFIG_DIR"
+            echo "--cols16 lighten --saturate 0.25 --contrast 21.0" > "$PARAMS_FILE"
+            echo "$CHOICE" > "$CONFIG_DIR/last_wallpaper"
+            
+            # Применяем обои с параметрами
+            wal --cols16 lighten --saturate 0.25 --contrast 21.0 -i "$CHOICE" -o "$SCRIPT"
+            ;;
+        *) exit 0 ;;
+    esac
 }
+
+restore () {
+    if [ -f "$PARAMS_FILE" ] && [ -f "$CONFIG_DIR/last_wallpaper" ]; then
+        PARAMS=$(cat "$PARAMS_FILE")
+        WALLPAPER=$(cat "$CONFIG_DIR/last_wallpaper")
+        
+        if [ -f "$WALLPAPER" ]; then
+            wal $PARAMS -i "$WALLPAPER" -o "$SCRIPT"
+        fi
+    fi
+}
+
+# Если аргумент "restore" - восстанавливаем обои
+if [ "$1" = "restore" ]; then
+    restore
+    exit 0
+fi
 
 # If given arguments:
 # First argument will be used by pywal as wallpaper/dir path
 # Second will be used as theme (use wal --theme to view built-in themes)
 
 case "$#" in
-	0) menu ;;
-	1) wal -i "$1" -o $SCRIPT ;;
-	2) wal -i "$1" --theme $2 -o $SCRIPT ;;
-	*) exit 0 ;;
+    0) menu ;;
+    1) 
+        # Сохраняем параметры и применяем
+        mkdir -p "$CONFIG_DIR"
+        echo "--cols16 lighten --saturate 0.25 --contrast 21.0" > "$PARAMS_FILE"
+        echo "$1" > "$CONFIG_DIR/last_wallpaper"
+        wal -i "$1" -o "$SCRIPT" 
+        ;;
+    2) 
+        mkdir -p "$CONFIG_DIR"
+        echo "--cols16 lighten --saturate 0.25 --contrast 21.0 --theme $2" > "$PARAMS_FILE"
+        echo "$1" > "$CONFIG_DIR/last_wallpaper"
+        wal -i "$1" --theme "$2" -o "$SCRIPT"
+        ;;
+    *) exit 0 ;;
 esac

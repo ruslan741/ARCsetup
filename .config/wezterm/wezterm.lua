@@ -119,6 +119,7 @@ config.window_frame = {
 
 -- Performance settings
 config.window_background_opacity = 0.96
+-- config.window_background_opacity = 1.00
 config.kde_window_background_blur = true
 config.enable_scroll_bar = false
 config.use_fancy_tab_bar = false

@@ -1,25 +1,21 @@
 #!/bin/sh
 
-# Extract colors from Pywal's JSON file
 background=$(jq -r '.special.background' ~/.cache/wal/colors.json)
 # foreground=$(jq -r '.special.foreground' ~/.cache/wal/colors.json) 
 foreground=$(jq -r '.colors.color5' ~/.cache/wal/colors.json) 
 frame_color=$(jq -r '.colors.color1' ~/.cache/wal/colors.json)
 highlight=$(jq -r '.colors.color5' ~/.cache/wal/colors.json)
 
-# Print the extracted colors to verify
 echo "Background: $background"
 echo "Foreground: $foreground"
 echo "Frame Color: $frame_color"
 echo "Highlight: $highlight"
 
-# Write new Dunst configuration
 cat <<EOF > ~/.config/i3/dunst/dunstrc    #Change file path if dunstrc isn't in the deafault path
 [global]
     # Display
     monitor = 1
-    follow = keyboard
-    origin = top-right
+    follow = keyb/pywalonlybg   origin = top-right
 	offset = (24, 56)
     width = 501
     height = (0, 300)
@@ -123,7 +119,13 @@ dunst -config ~/.config/i3/dunst/dunstrc &
 
 sleep 1
 
+WALLPAPER_DIR="$HOME/.config/i3/pywal"
+GENERATED_WALLPAPER="$WALLPAPER_DIR/current_wallpaper.png"
+
 jq -r '.special.background' ~/.cache/wal/colors.json | \
     xargs -I {} convert -size $(xdpyinfo | grep dimensions | awk '{print $2}') \
-    xc:{} ~/.cache/wal/wallpaper.png && \
-    feh --bg-fill ~/.cache/wal/wallpaper.png
+    xc:{} "$GENERATED_WALLPAPER"
+
+feh --bg-fill "$GENERATED_WALLPAPER"
+
+echo "$GENERATED_WALLPAPER" > ~/.cache/wal/wal

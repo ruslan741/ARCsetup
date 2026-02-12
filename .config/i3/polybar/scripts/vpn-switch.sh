@@ -7,10 +7,10 @@ UPDATE_INTERVAL=2
 # Функция проверки реального статуса (без изменения состояния)
 check_real_status() {
     if nmcli -t -f NAME connection show --active | grep -q "^${VPN_NAME}$"; then
-        echo ""
+        echo " On"
         return 0
     else
-        echo ""
+        echo " Off"
         return 1
     fi
 }

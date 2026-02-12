@@ -1,8 +1,7 @@
 [global]
     # Display
     monitor = 1
-    follow = keyboard
-    origin = top-right
+    follow = keyb/pywalonlybg   origin = top-right
 	offset = (24, 56)
     width = 501
     height = (0, 300)

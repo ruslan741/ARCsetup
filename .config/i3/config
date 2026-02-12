@@ -25,7 +25,6 @@ bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 # Add padding to window titles
 # for_window [class=".*"] title_format "  %title"
 
-exec --no-startup-id setxkbmap -layout "us,ru" -option "grp:win_space_toggle"
 
 exec_always --no-startup-id ~/.config/i3/scripts/autostart.sh
 

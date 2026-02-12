@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Пытаемся определить текущую раскладку несколькими способами
+get_layout() {
+    # Способ 1: xkb-switch (самый надежный)
+    if command -v xkb-switch >/dev/null 2>&1; then
+        xkb-switch -p
+        return
+    fi
+    
+    # Способ 2: xprop
+    layout=$(xprop -root _XKB_RULES_NAMES 2>/dev/null | awk -F '"' '{print $8}')
+    if [ -n "$layout" ]; then
+        echo "$layout"
+        return
+    fi
+    
+    # Способ 3: проверка Scroll Lock LED (для вашей конфигурации)
+    if xset q | grep -q "Scroll Lock: *on"; then
+        echo "ru"
+    else
+        echo "us"
+    fi
+}
+
+layout=$(get_layout | tr '[:upper:]' '[:lower:]')
+
+case "$layout" in
+    *us*|*en*)
+        echo "US"
+        ;;
+    *ru*)
+        echo "GOYDA"
+        ;;
+    *)
+        echo "Unknown"
+        ;;
+esac
